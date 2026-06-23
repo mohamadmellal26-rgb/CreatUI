@@ -1,0 +1,122 @@
+.search-modal {
+    position: fixed;
+    right: 50vh;
+    top: 20vh;
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  z-index: 999;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+.search-section { padding: 10px; }
+.Section-search {  overflow-y: scroll; }
+.section-title {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 10px 0;
+  padding-left: 10px;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-item:hover {
+  background: #f3f4f6;
+}.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  
+  /* هذا السطر يلون الأيقونة (SVG) والزر معاً */
+  color: #333; 
+  transition: opacity 0.2s;
+}
+
+.close-btn:hover {
+  opacity: 0.7;
+}
+
+/* إذا لم تتلون الأيقونة، أضف هذا السطر لضمان التأثير: */
+.close-btn svg {
+  stroke: currentColor; /* تجعل الأيقونة تأخذ لون الـ color الخاص بالزر */
+}
+
+.item-icon { font-size: 0.8rem; color: #6b7280; }
+/* الخلفية الشفافة التي تغطي كامل الشاشة */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* خلفية سوداء شفافة */
+  backdrop-filter: blur(10px); /* تأثير ضبابي خفيف (اختياري واحترافي) */
+  display: flex;
+  justify-content: center;
+  z-index: 998; /* أقل من الـ modal ليظهر الـ modal فوقها */
+}
+
+/* تعديل الـ search-modal ليعمل بشكل صحيح داخل الـ overlay */
+.search-modal {
+  position: absolute; /* نغيرها من fixed إلى absolute لأنها داخل الـ overlay */
+  top: 20vh;
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  z-index: 999;
+}/* تنسيق الـ Modal بشكل أفقي مختصر */
+.search-modal { position: absolute; top: 20vh; width: 90%; max-width: 600px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #e5e7eb; z-index: 999; }
+
+/* تنسيق شريط الإدخال بشكل أفقي مختصر */
+.search-input-wrapper { display: flex; align-items: center; padding: 16px; border-bottom: 1px solid #f3f4f6; }
+
+/* تنسيق زر الإغلاق بشكل أفقي مختصر */
+.close-btn { background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 8px; color: rgb(255, 145, 0); transition: opacity 0.2s; }
+.close-btn:hover { opacity: 0.7; }
+.close-btn svg { stroke: currentColor; }
+
+/* الحاوية الأفقية للنتائج */
+.search-container { display: flex; flex-direction: row; height: 400px; }
+
+/* الأعمدة الجانبية */
+.search-sidebar { width: 200px; border-right: 1px solid #f3f4f6; padding: 16px; background: #fafafa; }
+.search-results { flex: 1; padding: 16px; overflow-y: auto; }
+
+/* العناصر الداخلية */
+.search-item { display: flex; align-items: center; padding: 10px; gap: 10px; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+.search-item:hover { background: #f3f4f6; }
+.section-title { font-size: 0.75rem; color: #9ca3af; margin: 10px 0; padding-left: 10px; }

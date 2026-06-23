@@ -1,0 +1,94 @@
+.heroContainer {
+  background-color: white;
+  color: #111827;
+  font-family: sans-serif;
+  box-shadow: 0 4px 10px rgb(35, 34, 34);
+  margin: 10px;
+  min-height: 100vh;
+  width: calc(100% - 20px);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoBadge {
+  background-color: black;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 32px;
+  color: #4b5563;
+}
+
+.navLinks a {
+  color: inherit;
+}
+
+.navActions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.navActions a {
+  color: #4b5563;
+}
+
+.btnBlack {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.heroMain { padding: 40px; }
+
+.fundingBadge {
+  display: inline-block;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  padding: 4px 16px;
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+.heroDesc {
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 40px;
+  max-width: 672px;
+}
+
+.heroButtons { display: flex; gap: 16px; }
+
+.btnSecondary {
+  border: 1px solid #d1d5db;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  color: #111827;
+}

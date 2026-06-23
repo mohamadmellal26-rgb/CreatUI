@@ -1,0 +1,92 @@
+:root {
+  --gap-size: 24px;
+  --sidebar-width: 300px;
+  --container-max-width: 1400px;
+  --card-radius: 24px;
+}
+
+.contener-Blocks {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 40px;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 100px 20px;
+  align-items: flex-start;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0; /* القاعدة الذهبية لمنع التداخل في Grid */
+  width: 100%;
+}
+
+.upsell-side {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  position: sticky;
+  top: 20px;
+}
+
+/* إزالة الـ Margin الزائد الذي يسبب التداخل */
+.Blocks-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px; /* استخدم margin-bottom فقط لترتيب العناصر عمودياً */
+}
+
+.Blocks-text {
+  /* بدلاً من margin عشوائي، نعتمد على المسافات الخارجية للـ Header */
+  padding-right: 20px;
+}
+
+.Blocks-imgProjct {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--gap-size);
+}
+
+/* حل مشكلة التصاق العناصر */
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: var(--card-radius);
+  padding: 16px;
+  transition: all 0.3s ease;
+}.card-preview {
+  background: #000;
+  border-radius: calc(var(--card-radius) - 8px);
+  height: 250px;
+  overflow: hidden; /* يمنع أي جزء من الصورة من الخروج عن الحدود */
+  position: relative;
+  width: 100%; /* تأكد أنها تأخذ العرض كاملاً */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* تجعل الصورة تغطي المساحة دون أن تتشوه (بدون تمدد) */
+  object-position: center; /* تضمن توسيط الصورة دائماً */
+  transition: transform 0.5s ease; /* إضافة لمسة احترافية عند التحويم */
+}
+
+/* إضافة تأثير زوم خفيف عند التحويم */
+.project-card:hover .card-preview img {
+  transform: scale(1.05); 
+}
+
+@media (max-width: 1024px) {
+  .contener-Blocks {
+    flex-direction: column;
+    padding-top: 50px;
+  }
+  .upsell-side {
+    width: 100%;
+    position: static;
+    margin-bottom: 40px; /* إضافة مسافة بين الـ Side والمحتوى في الموبايل */
+  }
+}

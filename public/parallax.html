@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Hero Section</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #000000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* الحاوية الأساسية */
+    .parallax-scene {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* حاوية النص والأزرار */
+    .hero-content {
+      max-width: 650px;
+      text-align: left;
+      z-index: 100; /* جعل النص والأزرار في طبقة علوية */
+      position: relative;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #f4f4f5;
+      border: 1px solid #e4e4e7;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      color: #3f3f46;
+    }
+
+    h1 { font-size: 64px; font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin: 0 0 24px 0; }
+    p { font-size: 18px; line-height: 1.6; color: #52525b; margin: 0 0 32px 0; }
+    
+    .cta-buttons { display: flex; gap: 12px; }
+
+    .btn { padding: 12px 24px; border-radius: 50px; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; }
+    .btn-dark { background: #18181b; color: #ffffff; }
+    .btn-light { background: #ffffff; border: 1px solid #e4e4e7; color: #000000; }
+
+    /* الصور الطائرة (الخلفية) */
+    .floating-image {
+      position: absolute;
+      width: 250px;
+      height: 160px;
+      background: #f4f4f5;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.1s ease-out;
+      pointer-events: none; /* لمنع الصور من حجب النقرات عن الأزرار */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="parallax-scene" id="scene">
+    <div class="floating-image" style="top: 15%; left: 10%;" data-depth="0.05"></div>
+    <div class="floating-image" style="top: 15%; right: 10%;" data-depth="0.08"></div>
+    <div class="floating-image" style="bottom: 15%; left: 15%;" data-depth="0.04"></div>
+    <div class="floating-image" style="bottom: 15%; right: 10%;" data-depth="0.06"></div>
+
+    <div class="hero-content">
+      <div class="badge">We've raised $69M seed funding →</div>
+      <h1>Get warm leads for your business in minutes.</h1>
+      <p>Our AI-powered platform identifies and qualifies potential customers, so you can focus on closing deals instead of chasing cold leads.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-dark">Get Started →</a>
+        <a href="#" class="btn btn-light">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      // حساب حركة الماوس
+      const x = (e.clientX - window.innerWidth / 2) / 50;
+      const y = (e.clientY - window.innerHeight / 2) / 50;
+      
+      // تحريك كل صورة بناءً على العمق المحدد لها
+      document.querySelectorAll('.floating-image').forEach((img) => {
+        const depth = img.getAttribute('data-depth');
+        img.style.transform = `translate(${x * depth * 20}px, ${y * depth * 20}px)`;
+      });
+    });
+  </script>
+
+</body>
+</html>

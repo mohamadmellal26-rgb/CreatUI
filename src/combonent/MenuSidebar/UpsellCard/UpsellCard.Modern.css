@@ -1,0 +1,70 @@
+/* --- 1. الـ Tokens (استخدم هذه المتغيرات في مشروعك بالكامل) --- */
+:root {
+  --upsell-bg: #000;
+  --upsell-text: #fff;
+  --upsell-muted: #a0a0a0;
+  --upsell-accent: #fff;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+}
+
+/* --- 2. الـ Container (باستخدام Flex لتوزيع العناصر) --- */
+.upsell-card-container {
+  display: flex;
+  flex-direction: column;
+  background: var(--upsell-bg);
+  color: var(--upsell-text);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid #333;
+  margin: 20px 0;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+/* --- 3. الـ Image (معمارية الاحتراف) --- */
+.upsell-image {
+  width: 100%;
+  aspect-ratio: 16/9; /* تحديد النسبة يمنع تغير الشكل أثناء التحميل */
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+
+/* --- 4. الـ Content (استخدام Typography عصري) --- */
+.upsell-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.upsell-content p {
+  font-size: 0.85rem;
+  color: var(--upsell-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* --- 5. الـ Button (مبسط وعصري) --- */
+.upsell-btn {
+  width: 100%;
+  background: var(--upsell-accent);
+  color: #000;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upsell-btn:hover {
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+}
+
+.trusted-text {
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: #666;
+}

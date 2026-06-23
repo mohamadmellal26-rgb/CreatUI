@@ -1,0 +1,57 @@
+:root {
+  --footer-padding: 60px 40px;
+  --footer-text-hover: #000;
+  --footer-text-muted: #666;
+}
+
+.footer {
+  padding: var(--footer-padding);
+  background-color: #ffffff;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 80px; /* لضمان وجود مسافة بين المحتوى والتذييل */
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px; /* زدت المسافة قليلاً لتحسين التنفس البصري */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-column h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 24px;
+  text-transform: uppercase; /* استخدمت uppercase لإعطاء طابع الشركة الرسمية */
+  letter-spacing: 0.05em;
+}
+
+
+.footer-column li {
+  font-size: 0.85rem;
+  color: var(--footer-text-muted);
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-column li:hover {
+  color: var(--footer-text-hover);
+}
+
+/* التجاوب (Responsive) - استقرار الهيكل */
+@media (max-width: 1024px) {
+  .footer-container { 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container { 
+    grid-template-columns: 1fr; 
+    text-align: center; /* توسيط المحتوى في الشاشات الصغيرة لتحسين القراءة */
+  }
+}

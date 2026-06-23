@@ -1,0 +1,50 @@
+:root {
+  /* المتغيرات الأساسية للهيكل */
+  --gap-size: 24px;
+  --sidebar-width: 300px;
+  --container-max-width: 1400px;
+  --transition-speed: 0.3s;
+}
+
+.Templates-combonent {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: var(--gap-size);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 100px 20px 50px 20px;
+  align-items: flex-start;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0; /* القاعدة الذهبية لمنع التداخل في Grid */
+  width: 100%;
+}
+
+.upsell-side {
+  flex: 0 0 var(--sidebar-width);
+  position: sticky;
+  top: 20px; /* تضمن بقاء الكارد أمام المستخدم */
+}
+
+.Templates-imgProjct {
+  display: grid;
+  /* استخدام min() يجعل الشبكة ذكية وتتأقلم مع مساحة الشاشة تلقائياً */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: var(--gap-size);
+}
+
+/* الاستجابة للشاشات (Responsive) */
+@media (max-width: 1024px) {
+  .Templates-combonent {
+    flex-direction: column;
+  }
+  
+  .upsell-side {
+    flex: none;
+    width: 100%;
+    position: static; /* إيقاف الـ sticky في الموبايل */
+    margin-bottom: var(--gap-size);
+  }
+}

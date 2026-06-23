@@ -1,0 +1,90 @@
+:root {
+  --card-radius: 32px;
+  --preview-radius: 24px;
+  --bg-secondary: #eeebeb;
+}
+
+.labs-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  max-width: 1400px; /* زيادة بسيطة لتناسب الشاشات الكبيرة */
+  margin: 0 auto;
+  padding: 100px 20px;
+  align-items: flex-start;
+}
+
+/* حل تداخل الـ Scroll */
+.combonent-Labs {
+  flex: 1;
+  min-width: 0; /* منع تجاوز الحدود */
+}
+
+/* تنسيق النصوص */
+.content-text {
+  margin-bottom: 60px;
+}
+
+.content-text h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive Font Size */
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.05em;
+}
+
+/* الشبكة */
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* مرونة عالية */
+  gap: 40px;
+}
+
+.lab-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  border-radius: var(--card-radius);
+  padding: 16px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preview-box {
+  background: #000;
+  height: 420px;
+  border-radius: var(--preview-radius);
+  overflow: hidden;
+  position: relative;
+}
+
+.lab-webp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lab-card:hover .lab-webp-img {
+  transform: scale(1.03);
+}
+
+/* التنسيق النصي السفلي */
+.card-info {
+  padding: 24px 8px 12px 8px;
+  display: flex;
+  flex-direction: column; /* تأكد من أنها عمودية لترتيب العنوان فوق الوصف */
+  gap: 8px;
+}
+
+.upsell-side {
+  width: 300px;
+  flex-shrink: 0;
+  position: sticky; /* الحفاظ على الـ Upsell أمام المستخدم */
+  top: 100px;
+}
+
+/* التجاوب */
+@media (max-width: 1024px) {
+  .labs-container { flex-direction: column; }
+  .labs-grid { grid-template-columns: 1fr; }
+  .upsell-side { width: 100%; position: static; }
+}

@@ -1,0 +1,82 @@
+:root {
+  /* المتغيرات العامة */
+  --card-bg: #ffffff;
+  --card-border: #e1e1e1;
+  --card-radius: 20px;
+  --text-primary: #000000;
+  --text-secondary: #64748b;
+  --transition-speed: 0.3s;
+}
+
+.ui-access-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* نظام الشبكة */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* تصميم الكرت - متوافق مع JSX */
+.card {
+  background: var(--card-bg);
+  padding: 10px; /* تم تعديله ليناسب الهيكلة */
+  padding-bottom: 20px;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.card:hover {
+  border-color: #d1d5db;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* حماية الهيكل من الانهيار أثناء التحميل */
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* المعلومات داخل الكرت */
+.card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 10px 10px 10px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.card span {
+  background: #f8f9fa;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid var(--card-border);
+  color: #333;
+}
+
+.card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0 10px;
+  line-height: 1.5;
+}

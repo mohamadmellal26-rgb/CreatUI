@@ -1,0 +1,54 @@
+.rightSection { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px; 
+  min-width: 320px; 
+}
+
+.trustText { 
+  font-size: 1.125rem; 
+  color: #475569; 
+  font-weight: 500; 
+  line-height: 1.5; 
+}
+
+.avatarGroup { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 16px; 
+}
+
+@media (min-width: 640px) {
+  .avatarGroup { flex-direction: row; }
+}
+
+.avatars { 
+  display: flex; 
+  flex-direction: row-reverse; 
+  justify-content: flex-end; 
+}
+
+.avatarImg {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-left: -12px;
+  object-fit: cover;
+  background-color: #e2e8f0;
+  transition: transform 0.2s ease-in-out; /* حركة سلسة */
+  cursor: pointer;
+}
+
+.avatarImg:hover {
+  transform: scale(1.2); /* تكبير الصورة بنسبة 20% */
+  z-index: 10; /* لجعل الصورة المحددة فوق الأخريات */
+}
+
+.avatarImg:first-child { margin-left: 0; }
+
+.stars { 
+  color: #f59e0b; 
+  font-size: 1.25rem; 
+}

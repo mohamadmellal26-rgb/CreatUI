@@ -1,0 +1,49 @@
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* احذف الـ fixed والـ top/right والـ right */
+    
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+    padding: 60px 40px; /* زيادة الـ padding قليلاً لمظهر أفضل */
+    text-align: center;
+    width: 90%;          /* مرونة في الشاشات الصغيرة */
+    max-width: 400px;    /* لا تتجاوز عرض 400px في الشاشات الكبيرة */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* إضافة ظل خفيف لتبدو كبطاقة */
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #18181b;
+    margin-bottom: 12px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 24px;
+    max-width: 300px;
+}
+
+.ctaButton {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.ctaButton:hover {
+    background-color: #333333;
+}
+
+.ctaButton:active {
+    transform: scale(0.98);
+}

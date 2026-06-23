@@ -1,0 +1,106 @@
+.templates-grid {
+  padding: 2rem;
+}
+
+.card-wrapper {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 10px;
+  width: 100%;
+  max-width: 700px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card-wrapper:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.content-button{
+  display: flex;
+  gap: 20px;
+}
+
+.btn-preview {
+  padding: 8px 16px;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  background: white;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.card-desc {
+  color: #71717a;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* الحاوية تهتم بالمكان فقط */
+.contener-btn-buy {
+    width: 100%;
+}
+
+/* الزر هو الذي يحمل الألوان والحواف */
+.btn-buy {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%; /* اجعل الزر يملأ مساحة الـ div */
+    display: flex;
+    gap: 8px; /* مسافة بين السعر والقديم */
+    transition: background 0.3s ease;
+}
+
+.btn-buy:hover {
+    background: #333; /* تأثير بسيط عند المرور */
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 أعمدة متساوية */
+  gap: 8px;
+  margin-bottom: 16px;
+  height: 120px; /* ارتفاع ثابت للمعرض */
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05); /* تأثير بسيط عند المرور بالفأرة */
+}
+
+.content-button{
+  display: flex;
+  flex-direction: column;
+}
+
+.contener-btn-buy{
+  display: flex;
+}

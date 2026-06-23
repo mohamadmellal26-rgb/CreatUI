@@ -1,0 +1,60 @@
+:root {
+  /* الربط مع الـ Design Tokens الموجودة مسبقاً */
+  --comp-padding: 80px 20px;
+  --comp-title-color: #6b7280;
+  --comp-gap: 60px;
+  --comp-hover-scale: 1.05;
+}
+
+.companies-section {
+  text-align: center;
+  background-color: rgb(240, 243, 245);
+  padding: var(--comp-padding);
+}
+
+.companies-title {
+  color: var(--comp-title-color);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 50px;
+  letter-spacing: -0.02em;
+}
+
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px var(--comp-gap);
+  align-items: center;
+  justify-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo-item img {
+  max-height: 35px;
+  width: 100px;
+  object-fit: contain;
+  transition: all 0.3s ease; /* الانتقال السلس للـ Filter والـ Transform */
+}
+
+/* حالة التفاعل المحسنة: تجنبنا تضارب الـ Filter */
+.logo-item img:hover {
+  transform: scale(var(--comp-hover-scale));
+}
+
+/* إدارة منطقية للـ Inversion */
+.invert-logo img {
+  filter: invert(1);
+}
+
+/* لضمان أن الشعارات المقلوبة لا تفقد لونها عند الـ Hover */
+.invert-logo img:hover {
+  filter: invert(1) brightness(1.2); /* تزيد السطوع قليلاً بدلاً من إلغاء الانعكاس */
+}
+
+@media (max-width: 768px) {
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}

@@ -1,0 +1,98 @@
+:root {
+  --tab-bg: #f4f4f5;
+  --card-radius: 24px;
+  --gap: 40px;
+}
+
+/* التخطيط العام - افتراضياً موبايل (عمودي) */
+.contener-combonent {
+  display: flex;
+  flex-direction: column; /* عمودي في الجوال */
+  gap: var(--gap);
+  padding: 80px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* الشاشات الكبيرة (أجهزة الكمبيوتر) - نحول لـ Row */
+@media (min-width: 1024px) {
+  .contener-combonent {
+    flex-direction: row-reverse;
+    padding-top: 100px;
+  }
+}
+
+.main-content { flex: 1; min-height: 80vh; }
+
+.upsell-side {
+  width: 100%; /* في الجوال يأخذ العرض كامل */
+  flex-shrink: 0;
+}
+
+/* للشاشات الكبيرة، نثبت الـ Sidebar */
+@media (min-width: 1024px) {
+  .upsell-side {
+    width: 300px;
+    position: sticky;
+    top: 100px;
+  }
+}
+
+/* تنسيق الـ Tabs - جعلها مرنة */
+.tabs-container {
+  display: inline-flex;
+  background-color: var(--tab-bg);
+  padding: 4px;
+  margin: 20px;
+  border-radius: 9999px;
+  border: 1px solid #e4e4e7;
+  overflow-x: auto; /* إذا كثرت التابات في الجوال لا تخرج عن الشاشة */
+  max-width: 100%;
+}
+
+.tab-btn {
+  padding: 8px 16px; /* تقليل الحشو قليلاً ليناسب الشاشات الصغيرة */
+  border: none;
+  border-radius: 9999px;
+  background: transparent;
+  color: #71717a;
+  white-space: nowrap; /* يمنع التفاف النص داخل التاب */
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background-color: #000;
+  color: #fff;
+}
+
+/* الشبكة (Grid) - ذكية تلقائياً */
+.combonent-imgProjct {
+  display: grid;
+  /* نستخدم 1fr في الموبايل، ونتوسع في الكمبيوتر */
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .combonent-imgProjct {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+}
+
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: var(--card-radius);
+  padding: 16px;
+}
+
+.card-preview {
+  background: #000;
+  border-radius: 16px;
+  height: 200px; /* تصغير الارتفاع قليلاً للموبايل */
+}
+
+@media (min-width: 768px) {
+  .card-preview { height: 250px; }
+}

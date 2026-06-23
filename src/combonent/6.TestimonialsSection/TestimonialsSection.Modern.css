@@ -1,0 +1,57 @@
+:root {
+  /* الربط مع نظام الألوان والمسافات العام */
+  --testi-gap: 24px;
+  --testi-radius: 16px;
+  --testi-bg: rgba(246, 246, 246, 0.5);
+  --testi-border: #e5e7eb;
+}
+
+.testimonials-container { 
+  padding: 80px 20px; 
+  max-width: 1200px; 
+  margin: auto; 
+}
+
+.title { 
+  text-align: center; 
+  font-size: 2.5rem; 
+  font-weight: 800; 
+  margin-bottom: 50px; 
+  letter-spacing: -0.02em;
+}
+
+/* التغيير الجذري: حذف height الثابتة واستخدام grid-auto-rows */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--testi-gap);
+  /* هذا يجعل الكاردات تتمدد حسب محتواها الطبيعي دون فراغات */
+  grid-auto-rows: min-content; 
+}
+
+.testimonial-card {
+  background: var(--testi-bg);
+  border-radius: var(--testi-radius);
+  border: 1px solid var(--testi-border);
+  overflow: hidden; 
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+.testimonial-card:hover {
+  border-color: #d1d5db;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* حل مشكلة الـ Iframe بدون الاعتماد المفرط على !important */
+.twitter-embed-wrapper {
+  display: block;
+  width: 100%;
+}
+
+/* تخصيص الـ Twitter Embed */
+.testimonial-card .twitter-tweet {
+  margin: 0 !important; /* هذا استثناء مقبول لأن تويتر يفرض أنماطاً مضمنة */
+  width: 100% !important;
+}

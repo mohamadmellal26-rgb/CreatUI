@@ -1,0 +1,82 @@
+.cta-wrapper {
+  padding: 80px 40px;
+  text-align: left;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cta-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.cta-header p {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.unlock-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.social-proof-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.avatars-group {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-left: -12px;
+}
+
+.avatar:first-child { margin-left: 0; }
+
+.stars {
+  color: #f59e0b;
+  font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+.trust-text {
+  color: #666;
+  font-weight: 500;
+}/* هذا الكلاس يطبق على الكارت (أو في حالتك، الـ Avatar) */
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-left: -15px;
+  /* السر في هذه السطور الثلاثة */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* التأثير عند اللمس (Hover) */
+.avatar:hover {
+  transform: translateY(-8px) scale(1.1); /* يرتفع للأعلى ويكبر قليلاً */
+  z-index: 10; /* ليظهر فوق بقية الصور */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* إضافة ظل عميق ليبدو طافياً */
+}

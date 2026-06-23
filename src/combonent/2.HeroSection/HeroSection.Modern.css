@@ -1,0 +1,135 @@
+/* --- الإعدادات الأساسية --- */
+:root {
+  --hero-bg: #f3f3f3;
+  --hero-padding: 100px 80px 40px 80px;
+  --text-primary: #333;
+  --text-muted: #a3a3a3;
+  --glow-color-1: rgba(100, 150, 255, 0.15);
+  --glow-color-2: rgba(150, 100, 255, 0.15);
+  --btn-radius: 8px;
+  --border-color: #ddd;
+}
+
+/* --- الهيكل العام --- */
+.hero-container {
+  position: relative;
+  overflow: hidden;
+  padding: var(--hero-padding);
+  background-color: var(--hero-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.interactive-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    var(--glow-color-1),
+    var(--glow-color-2),
+    transparent 40%
+  );
+}
+
+.hero-container:hover .interactive-glow { opacity: 1; }
+
+.hero-badge, 
+.hero-main-content, 
+.hero-tabs-bar {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  width: max-content;
+  gap: 8px;
+}
+
+.hero-main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.hero-left-column { flex: 1; max-width: 650px; }
+
+.hero-headline {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+  letter-spacing: -1px;
+}
+
+.hero-cta-group { display: flex; gap: 16px; }
+
+/* --- الأزرار --- */
+.btn-primary, .btn-secondary {
+  font-size: 16px;
+  border-radius: var(--btn-radius);
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--text-primary);
+  color: #fff;
+  border: 1px solid var(--text-primary);
+}
+
+.btn-primary:hover { background-color: #333; }
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--border-color); 
+  color: var(--text-primary); 
+}
+
+.btn-secondary:hover { background-color: rgba(0,0,0,0.05); }
+
+/* --- الـ Avatar --- */
+.avatar-stack { display: flex; flex-direction: row-reverse; justify-content: flex-end; }
+.avatar {
+  width: 36px;
+  height: 36px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+/* --- التجاوب (Responsive) --- */
+@media (max-width: 992px) {
+  :root { --hero-padding: 60px 30px; }
+  .hero-main-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-left-column { max-width: 100%; }
+  .hero-headline { font-size: 40px; }
+  .hero-cta-group { justify-content: center; }
+}
+
+@media (max-width: 576px) {
+  .hero-headline { font-size: 32px; }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary, .btn-secondary { width: 100%; }
+}

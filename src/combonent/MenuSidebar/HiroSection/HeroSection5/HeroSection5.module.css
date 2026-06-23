@@ -1,0 +1,126 @@
+.heroWrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* الخلفية المتحركة */
+.gridBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  
+  /* هنا نستخدم تدرجين متقاطعين لإنشاء تأثير الخطوط المتقطعة المائلة */
+  background-image: 
+    linear-gradient(45deg, #0080ff 1px, transparent 1px),
+    linear-gradient(45deg, transparent 40px, rgba(0, 128, 255, 0.2) 40px, rgba(0, 128, 255, 0.2) 42px, transparent 42px);
+  
+  /* زيادة الحجم لجعل الخطوط تبدو متباعدة وطويلة */
+  background-size: 100px 100px;
+  
+  /* اتجاه الحركة نحو الزاوية اليمنى العلوية */
+  animation: gridMove 10s linear infinite;
+}
+
+@keyframes gridMove {
+  from { 
+    background-position: 0 0; 
+  }
+  to { 
+    /* تحريك نحو اليمين (موجب) وللأعلى (سالب) */
+    background-position: 100px -100px; 
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  color: #0080ff;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  padding: 0 4px;
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 75%;
+  background-color: rgba(0, 128, 255, 0.08);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.description {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #4a5568;
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .actions { flex-direction: row; justify-content: center; }
+}
+
+.btnPrimary {
+  width: 100%;
+  max-width: 200px;
+  padding: 16px 32px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.btnPrimary:hover { background-color: #171717; transform: translateY(-2px); }
+
+.btnSecondary {
+  width: 100%;
+  max-width: 200px;
+  padding: 16px 32px;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.btnSecondary:hover { background-color: #f8fafc; transform: translateY(-2px); }

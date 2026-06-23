@@ -1,0 +1,65 @@
+:root {
+  --faq-radius: 12px;
+  --faq-border: #e5e7eb;
+}
+
+.faq-section { 
+  max-width: 800px; 
+  margin: 100px auto; 
+  padding: 20px; 
+  text-align: center; 
+}
+
+.faq-section h2 { 
+  font-size: 3rem; 
+  margin-bottom: 20px; 
+  letter-spacing: -0.02em;
+}
+
+.faq-container { 
+  margin-top: 40px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; 
+}
+
+.faq-item { 
+  border: 1px solid var(--faq-border); 
+  border-radius: var(--faq-radius); 
+  transition: all 0.3s ease; 
+  text-align: left;
+  background: white;
+}
+
+.faq-question {
+  width: 100%; 
+  padding: 20px; 
+  background: transparent; 
+  border: none;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600; 
+  cursor: pointer; 
+  outline: none;
+  color: #111;
+}
+
+/* حل احترافي للـ Max-Height */
+.faq-answer {
+  max-height: 0; 
+  overflow: hidden; 
+  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* استخدام خاصية active لتوسيع الـ FAQ */
+.faq-item.active .faq-answer { 
+  max-height: 500px; /* رقم كبير كافٍ لأي محتوى */
+  padding-bottom: 20px; 
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: max-height 0.4s ease-in-out;
+}

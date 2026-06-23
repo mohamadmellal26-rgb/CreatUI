@@ -1,0 +1,117 @@
+:root {
+  /* متغيرات النظام - سهلة التعديل */
+  --bg-card: #ffffff;
+  --bg-dark: #1c1c1e;
+  --border-default: #e5e5ea;
+  --text-main: #1c1c1e;
+  --text-muted: #8e8e93;
+  --radius: 20px;
+  --gap: 1.5rem;
+}
+
+.pricing-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1.25rem;
+}
+
+.pricing-grid {
+  /* Grid ذكي لا يحتاج ميديا كويري */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-default);
+  background: var(--bg-card);
+  transition: transform 0.3s ease;
+}
+
+.pricing-card.dark-card {
+  background: var(--bg-dark);
+  color: #ffffff;
+  border: none;
+}
+
+/* توزيع المساحات داخلياً */
+.card-top {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* يجبر هذا القسم على أخذ المساحة المتاحة */
+}
+
+.title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.price-area {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin: 1.5rem 0;
+}
+
+.price-amount {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.features-list {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-default);
+}
+
+.pricing-card.dark-card .features-list {
+  border-top-color: #2c2c2e;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.check-icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--border-default);
+  color: var(--text-main);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.pricing-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--text-main);
+  color: #ffffff;
+  margin-top: auto; /* يدفع الزر للأسفل مهما كان طول المحتوى */
+}
+
+.pricing-card.dark-card .pricing-btn {
+  background: #ffffff;
+  color: var(--bg-dark);
+}.pricing-grid{
+  margin-top: 30px;
+}

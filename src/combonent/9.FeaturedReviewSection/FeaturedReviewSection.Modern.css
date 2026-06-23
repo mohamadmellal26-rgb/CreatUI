@@ -1,0 +1,87 @@
+:root {
+  --feat-padding: 120px 40px;
+  --feat-radius: 40px;
+  --feat-video-radius: 24px;
+  --color-white: #fff;
+}
+
+.featured-section { 
+  padding: var(--feat-padding); 
+  max-width: 1200px; /* معيار احترافي لعرض المحتوى */
+  margin: auto; 
+}
+
+.header-box { text-align: center; margin-bottom: 80px; }
+.header-box h2 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: #111; letter-spacing: -1px; }
+.header-box p { color: #666; font-size: 1.25rem; margin-top: 20px; }
+
+.reviews-grid { display: flex; flex-direction: column; gap: 60px; }
+
+.review-card { 
+  display: flex; 
+  align-items: center; 
+  padding: 40px; 
+  border-radius: var(--feat-radius); 
+  color: var(--color-white); 
+  gap: 50px; 
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.review-card:hover { transform: scale(1.01); }
+
+/* --- استقرار الفيديو (Video Thumbnail) --- */
+.video-thumb { 
+  flex: 1; /* جعل الفيديو يأخذ مساحة مرنة */
+  aspect-ratio: 16 / 9; /* حماية استقرار الهيكل */
+  width: 100%;
+  background: rgba(0,0,0,0.2); 
+  border-radius: var(--feat-video-radius); 
+  overflow: hidden; 
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.video-thumb iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- النص وتأثير الـ Span --- */
+.review-content { 
+  flex: 1; 
+  font-size: 1.5rem; 
+  line-height: 1.6; 
+  font-weight: 500; 
+}
+
+.review-content span { 
+  position: relative; 
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0 4px;
+}
+
+/* النقاط الجمالية (Decorative Points) */
+.review-content span::before,
+.review-content span::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.review-content span::before { top: -4px; left: -4px; }
+.review-content span::after { bottom: -4px; right: -4px; }
+
+/* التجاوب (Responsive) */
+@media (max-width: 1024px) {
+  .review-card { flex-direction: column; text-align: center; gap: 30px; }
+  .video-thumb { width: 100%; max-width: 600px; }
+}

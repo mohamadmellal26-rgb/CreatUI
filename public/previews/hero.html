@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bento Grid with Icons</title>
+  <style>
+    :root {
+      --bg-app: #ffffff;
+      --text-main: #000000;
+      --card-bg: #ffffff;
+      --border-color: #e4e4e7;
+    }
+
+    body {
+      margin: 0; padding: 60px 20px;
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex; flex-direction: column; align-items: center;
+    }
+
+    @keyframes rotate-rainbow {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .ui-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 22px;
+      padding: 30px;
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .ui-card:hover { transform: translateY(-6px); }
+
+    /* تأثير القوس قزح للكرت */
+    .rainbow-card {
+      background-image: linear-gradient(var(--card-bg), var(--card-bg)), 
+                        linear-gradient(90deg, #ff7e5f, #feb47b, #86e3ce, #6366f1);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      border: 2px solid transparent !important;
+      animation: rotate-rainbow 4s linear infinite;
+    }
+
+    .card-large { grid-column: span 3; }
+    .card-medium { grid-column: span 2; }
+
+    .icon-box {
+      width: 42px; height: 42px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      display: flex; justify-content: center; align-items: center;
+      margin-bottom: 24px;
+      transition: 0.3s;
+    }
+    .icon-box svg { width: 20px; height: 20px; color: #18181b; }
+
+    .ui-card:hover .icon-box { border-color: #6366f1; filter: drop-shadow(0 0 8px #6366f1); }
+
+    .card-title { font-size: 21px; font-weight: 700; margin-bottom: 10px; }
+    .card-description { font-size: 14px; color: #52525b; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+  <div class="cards-grid">
+    <!-- كرت 1 -->
+    <div class="ui-card card-large rainbow-card">
+      <div class="icon-box">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25" /></svg>
+      </div>
+      <h2 class="card-title">Do things the right way</h2>
+      <p class="card-description">Running out of copy so I'll write anything here to make it look exceptionally complete.</p>
+    </div>
+
+    <!-- كرت 2 -->
+    <div class="ui-card card-large">
+      <div class="icon-box">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 21l-.813-5.096L3 15l5.187-.813L9 9l.813 5.187L15 15l-5.187.813ZM18.079 7.924 17.5 11l-.579-3.076L14 7.5l2.921-.579L17.5 4l.579 2.921L21 7.5l-2.921.579Z" /></svg>
+      </div>
+      <h2 class="card-title">The best AI code editor ever</h2>
+      <p class="card-description">Yes, it's true. I'm not even kidding. Ask my engineering team if you don't believe me.</p>
+    </div>
+
+    <!-- كروت متوسطة -->
+    <div class="ui-card card-medium">
+      <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg></div>
+      <h2 class="card-title">Aceternity UI Pro</h2>
+      <p class="card-description">The absolute best investment you will make for your enterprise.</p>
+    </div>
+
+    <div class="ui-card card-medium">
+      <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" /></svg></div>
+      <h2 class="card-title">Built by Cursor</h2>
+      <p class="card-description">Everything adapts instantly to your cursor location.</p>
+    </div>
+
+    <div class="ui-card card-medium">
+      <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg></div>
+      <h2 class="card-title">Blazing Fast</h2>
+      <p class="card-description">Rendered fluidly at 60 frames per second.</p>
+    </div>
+  </div>
+
+</body>
+</html>

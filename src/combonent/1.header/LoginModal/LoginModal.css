@@ -1,0 +1,56 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa; /* خلفية رمادية فاتحة جداً تريح العين */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 200px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.logo-icon {
+  width: 40px; height: 40px;
+  background: black; color: white;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; margin: 0 auto 24px;
+  font-weight: bold; font-size: 20px;
+}
+
+h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+.subtitle { color: #666; margin-bottom: 32px; font-size: 14px; }
+
+.input-group { text-align: left; margin-bottom: 20px; }
+.input-group label { display: block; font-size: 12px; font-weight: 500; margin-bottom: 8px; }
+
+input {
+  width: 100%; padding: 12px; border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  width: 100%; padding: 12px; background: #000; color: #fff;
+  border: none; border-radius: 6px; font-weight: 500; cursor: pointer;
+}
+
+.divider { margin: 24px 0; position: relative; color: #aaa; font-size: 12px; }
+.divider::before, .divider::after {
+  content: ""; position: absolute; top: 50%; width: 40%; height: 1px; background: #eee;
+}
+.divider::before { left: 0; } .divider::after { right: 0; }
+
+.btn-github {
+  width: 100%; padding: 12px; border: 1px solid #ddd;
+  background: white; border-radius: 6px; display: flex;
+  align-items: center; justify-content: center; gap: 8px; cursor: pointer;
+}
